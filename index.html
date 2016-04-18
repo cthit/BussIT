@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<!-- https://developer.yahoo.com/weather/#get-started
+	https://developer.forecast.io
+	https://developer.vasttrafik.se/portal/#/ -->
+	<head>
+		<meta name="mobile-web-app-capable" content="yes">
+		<meta charset="utf-8" />
+		<title>Web App</title>
+		<link rel="stylesheet" type="text/css "media="screen" href="style.css">
+	</head>
+
+	<body>
+		<div id="vaderwidget">
+			<div id="c_e723c19902fd23e6df4896565029b0ca" class="ancho"><h2 style="color: #ffffff; margin: 0 0 3px; padding: 2px; font: bold 13px/1.2 Verdana; text-align: center;">Vädret Göteborg</h2></div><script type="text/javascript" src="http://www.klart.se/widget/widget_loader/e723c19902fd23e6df4896565029b0ca"></script>
+		</div>
+		<div id="reseplanerare">
+			<iframe src="http://www.vasttrafik.se/nasta-tur-fullskarm/?externalid=9021014004830000&friendlyname=Mossen+Göteborg" frameborder="0"></iframe>
+		</div>
+		<div>
+			<script type="text/javascript"> 
+				var date = new Date(); 
+				var year = date.getFullYear(); 
+				var month = date.getMonth(); 
+				month=month+1; 
+				if (month < 10) 
+				 month = "0" + month; 
+				var day= date.getDate(); 
+				if (day < 10) 
+				 day = "0" + day; 
+				var datestring=year+''+month+''+day; 
+
+				document.write("<iframe src="https:/calendar.google.com/calendar/embed?showTitle=0&amp;showNav=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;mode=DAY&amp;dates="+datestring+"/"+datestring+"&amp;height=700&amp;wkst=2&amp;bgcolor=%23000000&amp;src=anton.badminton%40gmail.com&amp;color=%232952A3&amp;src=4ip80qk34slgaa4tbmhpghlbrk%40group.calendar.google.com&amp;color=%238C500B&amp;src=fspexet%40gmail.com&amp;color=%23691426&amp;src=3ii7sccbg1n455o5u3n98tpiog%40group.calendar.google.com&amp;color=%23B1365F&amp;src=15po40sb72mk55p2h3frgth8sjr0u05e%40import.calendar.google.com&amp;color=%231B887A&amp;src=11iu8628tg9gdl32p7lo0fefd8%40group.calendar.google.com&amp;color=%232F6309&amp;ctz=Europe%2FStockholm" style="border-width:0" width="500" height="700" frameborder="0" scrolling="no"></iframe>");
+			</script>
+		</div>
+	</body>
+</html
