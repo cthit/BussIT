@@ -1,0 +1,74 @@
+// Place all the styles related to the Home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body
+	background: black
+	margin: 0
+	color: white
+	font-family: "Helvetica Neue", sans-serif
+
+h1
+	margin-bottom: -15px
+
+iframe
+	overflow: hidden
+
+.leftsidebar, .rightsidebar, .bar
+	display: flex
+	flex-direction: column
+
+.leftsidebar, .rightsidebar
+	height: 75vh
+
+.container
+	width: 100%
+	margin-top: 20px
+	display: flex
+	flex-direction: column
+
+.leftsidebar
+	max-width: 42%
+	float: left
+
+.rightsidebar
+	width: 58%
+	float: right
+
+.bar
+	width: 100%
+	height: 25vh
+	div
+		margin-top: 20px
+		float: left
+
+.item
+	font-size: 1.2em
+	display: flex
+	flex-direction: row
+	width: 100%
+	border-bottom: 1px solid white
+	> *
+		display: flex
+		justify-content: center
+	&:nth-child(2)
+		font-size: 1.4em
+	*
+		padding: 5px 15px
+
+.line
+	width: 10%
+
+.destination
+	width: 40%
+	justify-content: flex-start
+
+.location
+	width: 20%
+
+.departure
+	width: 25%
+
+#clock
+	max-width: 100%
+	float: right
