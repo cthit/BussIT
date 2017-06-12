@@ -3,9 +3,9 @@ import '../../App.css';
 import Header from './header';
 import DepartureItem from './departure-item'
 
-class Widget extends Component {
+class Vasttrafik extends Component {
   render() {
-    var elms = Array.from(Array(5).keys()).map( i => <DepartureItem />);
+    var elms = Array.from(Array(5).keys()).map( i => <DepartureItem line="52" destination="Linnéplatsen" departure="3 min" nextDeparture="13 min" />);
     return (
       <div className="widget vasttrafik">
         <ul>
@@ -17,4 +17,4 @@ class Widget extends Component {
   }
 }
 
-export default Widget;
+export default Vasttrafik;

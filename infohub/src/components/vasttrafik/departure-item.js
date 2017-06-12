@@ -5,10 +5,10 @@ class DepartureItem extends Component {
   render() {
     return (
       <li className="widget-list-item">
-        <div className="line">Linje</div>
-        <div className="destination">Riktning</div>
-        <div className="departs">Avgår om</div>
-        <div className="next-departure">Nästa tur</div>
+        <div className="line">{this.props.line}</div>
+        <div className="destination">{this.props.destination}</div>
+        <div className="departs">{this.props.departure}</div>
+        <div className="next-departure">{this.props.nextDeparture}</div>
       </li>
     );
   }

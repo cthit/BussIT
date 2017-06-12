@@ -1,12 +1,14 @@
+.widget {
+  border-radius: 15px;
+  padding: 20px; }
+
 .vasttrafik {
   min-width: 450px;
   border: 1px solid lightgrey;
-  border-radius: 5px;
   background-color: rgba(30, 30, 220, 0.6);
   color: #c8c8c8;
   font-size: 1.2rem; }
   .vasttrafik ul {
-    margin: 20px;
     padding-left: 0; }
   .vasttrafik .vasttrafik-header, .vasttrafik .widget-list-item {
     display: flex;
@@ -23,5 +25,14 @@
     border-bottom: 2px solid rgba(100, 100, 100, 0.8);
     padding-bottom: 0.3em;
     margin-bottom: 7px; }
+
+.clock {
+  color: #c8c8c8;
+  background-color: rgba(0, 0, 0, 0.7);
+  border: 1px solid lightgrey; }
+  .clock .time {
+    font-size: 8.5rem; }
+  .clock .date {
+    font-size: 4rem; }
 
 /*# sourceMappingURL=App.css.map */
