@@ -1,6 +1,14 @@
+div[data-reactroot] {
+  width: inherit;
+  height: inherit;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap; }
+
 .widget {
   border-radius: 15px;
-  padding: 20px; }
+  padding: 20px;
+  margin: 2.5vh 1vw; }
 
 .vasttrafik {
   min-width: 450px;
@@ -37,9 +45,17 @@
 
 .instagram {
   background-color: rgba(240, 0, 240, 0.5);
-  border: 1px solid rgba(100, 100, 100, 0.8); }
+  border: 1px solid rgba(100, 100, 100, 0.8);
+  width: 45vh;
+  height: 45vh;
+  display: flex;
+  justify-content: center; }
   .instagram img {
-    max-height: 50vh;
-    max-width: 400px; }
+    max-height: 90%;
+    max-width: 90%; }
+
+.weather {
+  width: 30vw;
+  height: 20vh; }
 
 /*# sourceMappingURL=App.css.map */
