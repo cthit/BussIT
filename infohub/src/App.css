@@ -35,4 +35,11 @@
   .clock .date {
     font-size: 4rem; }
 
+.instagram {
+  background-color: rgba(240, 0, 240, 0.5);
+  border: 1px solid rgba(100, 100, 100, 0.8); }
+  .instagram img {
+    max-height: 50vh;
+    max-width: 400px; }
+
 /*# sourceMappingURL=App.css.map */

@@ -4,7 +4,7 @@ import '../../App.css';
 class Clock extends Component {
   setTime() {
     var currentdate = new Date();
-    var hours = currentdate.getUTCHours() + parseInt(this.props.UTCOffset);
+    var hours = currentdate.getHours();
 
       // correct for number over 24, and negatives
       if( hours >= 24 ){ hours -= 24; }
@@ -15,16 +15,14 @@ class Clock extends Component {
       if( hours.length === 1 ){ hours = "0" + hours; }
 
       // minutes are the same on every time zone
-      var minutes = currentdate.getUTCMinutes();
+      var minutes = currentdate.getMinutes();
 
       // add leading zero, first convert hours to string
       minutes = minutes + "";
       if( minutes.length === 1 ){ minutes = "0" + minutes; }
 
-      var seconds = currentdate.getUTCSeconds();
-      if (seconds < 10) {
-        seconds = "0" + seconds;
-      }
+      var seconds = currentdate.getSeconds();
+      if (seconds < 10) seconds = "0" + seconds;
       this.setState({
         hours: hours,
         minutes: minutes,
@@ -37,46 +35,10 @@ class Clock extends Component {
     var date = currentdate.getDate();
     var month = currentdate.getMonth();
     var year = currentdate.getFullYear();
-    switch (month) {
-      case 0:
-        month = "Januari";
-        break;
-      case 1:
-        month = "Februari";
-        break;
-      case 2:
-        month = "Mars";
-        break;
-      case 3:
-        month = "April";
-        break;
-      case 4:
-        month = "Maj";
-        break;
-      case 5:
-        month = "Juni";
-        break;
-      case 6:
-        month = "Juli";
-        break;
-      case 7:
-        month = "Augusti";
-        break;
-      case 8:
-        month = "September";
-        break;
-      case 9:
-        month = "Oktober";
-        break;
-      case 10:
-        month = "November";
-        break;
-      case 11:
-        month = "December";
-        break;
-      default:
+    var months = ["Januari", "Februari", "Mars", "April", "Maj", "Juni", "Juli",
+                  "Augusti", "September", "Oktober", "November", "December"];
+    month = months[month];
 
-    }
     this.setState({
       date: date,
       month: month,

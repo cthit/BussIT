@@ -5,8 +5,13 @@ body {
   width: 100vw;
   font-family: sans-serif;
   background-image: url('images/background.jpg');
+}
+
+div[data-reactroot] {
+  width: inherit;
+  height: inherit;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
 }
