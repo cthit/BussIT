@@ -6,8 +6,8 @@
   font-size: 1.2rem
   ul
     padding-left: 0
+    margin: 0
   .vasttrafik-header, .widget-list-item
-    display: flex
     padding: 0.2em 0.4em
     .line
       flex: 1
@@ -21,3 +21,10 @@
     border-bottom: 2px solid $widget-border-color
     padding-bottom: 0.3em
     margin-bottom: 7px
+    .bus-stop
+      color: grey
+      margin:
+        top: 7px
+        bottom: 5px
+  .widget-list-item, .vasttrafik-header > li
+    display: flex

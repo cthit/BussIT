@@ -11,12 +11,18 @@ class Vasttrafik extends Component {
       departure: "3 min",
       nextDeparture: "13 min"
     };
-    var elms = Array.from(Array(5).keys()).map( i => <DepartureItem data={data} />);
+    function elms(nrOfItems) {
+      return Array.from(Array(nrOfItems).keys()).map( i => <DepartureItem data={data} />);
+    }
     return (
       <div className="widget vasttrafik">
+        <Header busStop="Mossen" />
         <ul>
-          <Header />
-          {elms}
+          {elms(2)}
+        </ul>
+        <Header busStop="Pilbågsgatan" />
+        <ul>
+          {elms(5)}
         </ul>
       </div>
     );

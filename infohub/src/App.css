@@ -8,7 +8,7 @@ div[data-reactroot] {
 .widget {
   border-radius: 15px;
   padding: 20px;
-  margin: 2.5vh 1vw; }
+  margin: 1vh 1vw; }
 
 .vasttrafik {
   min-width: 450px;
@@ -17,9 +17,9 @@ div[data-reactroot] {
   color: #c8c8c8;
   font-size: 1.2rem; }
   .vasttrafik ul {
-    padding-left: 0; }
+    padding-left: 0;
+    margin: 0; }
   .vasttrafik .vasttrafik-header, .vasttrafik .widget-list-item {
-    display: flex;
     padding: 0.2em 0.4em; }
     .vasttrafik .vasttrafik-header .line, .vasttrafik .widget-list-item .line {
       flex: 1; }
@@ -33,6 +33,12 @@ div[data-reactroot] {
     border-bottom: 2px solid rgba(100, 100, 100, 0.8);
     padding-bottom: 0.3em;
     margin-bottom: 7px; }
+    .vasttrafik .vasttrafik-header .bus-stop {
+      color: grey;
+      margin-top: 7px;
+      margin-bottom: 5px; }
+  .vasttrafik .widget-list-item, .vasttrafik .vasttrafik-header > li {
+    display: flex; }
 
 .clock {
   color: #c8c8c8;
