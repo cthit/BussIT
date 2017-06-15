@@ -1,29 +1,25 @@
 import React, { Component } from 'react';
 import '../../App.css';
-import Header from './header';
-import DepartureItem from './departure-item'
+import BusStop from './bus-stop'
 
 class Vasttrafik extends Component {
   render() {
-    const data = {
-      line: 52,
-      destination: "Linnéplatsen",
-      departure: "3 min",
-      nextDeparture: "13 min"
-    };
-    function elms(nrOfItems) {
-      return Array.from(Array(nrOfItems).keys()).map( i => <DepartureItem data={data} />);
+    const stops = [
+      {
+        name: 'Mossen',
+        id: 9021014004830000
+      },
+      {
+        name: 'Pilbågsgatan',
+        id: 9021014005280000
+      }
+    ];
+    function addBusStops() {
+      return stops.map( (e, i) => <BusStop key={i} data={e} />)
     }
     return (
       <div className="widget vasttrafik">
-        <Header busStop="Mossen" />
-        <ul>
-          {elms(2)}
-        </ul>
-        <Header busStop="Pilbågsgatan" />
-        <ul>
-          {elms(5)}
-        </ul>
+        {addBusStops()}
       </div>
     );
   }
