@@ -20,16 +20,18 @@ def getVasttrafikJSON(id):
     time = str(datetime.datetime.now().strftime("%H:%M"))
     host = 'https://api.vasttrafik.se'
     baseurl = '/bin/rest.exe/v2'
+    headers = {
+        'Authorization': 'Bearer ' + authKey
+    }
     request = {
         'id': id,
         'date': date,
         'time': time,
-        'authKey': authKey,
         'format': 'json',
     }
     requestURL = host + baseurl + '/departureBoard'
-    r = requests.get(requestURL, params=request)
-    return r.json()
+    r = requests.get(requestURL, params=request, headers=headers)
+    return json.dumps(r.json())
 
 def getAccsessTokenVasttrafik():
     url = 'https://api.vasttrafik.se/token' # Set destination URL here
