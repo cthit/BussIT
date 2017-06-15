@@ -36,7 +36,6 @@ def getAccsessTokenVasttrafik():
     key = API['vasttrafik']['key']
     secret = API['vasttrafik']['secret']
     encoded = base64.b64encode((key + ":" + secret).encode()).decode()
-    print(encoded)
     post_fields = {
         'grant_type': 'client_credentials',
         'scope': '1'
@@ -46,6 +45,6 @@ def getAccsessTokenVasttrafik():
         'Content-Type': 'application/x-www-form-urlencoded',
     }     # Set POST fields here
     r = requests.post(url, data=post_fields, headers=headers).json()
+    r = json.dumps(r)
     access_token = json.loads(r)['access_token']
-    print(access_token)
-    return r['access_token']
+    return access_token
