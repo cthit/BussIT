@@ -1,0 +1,6 @@
+API = {
+    'vasttrafik': {
+        'key': '',
+        'secret': '',
+    }
+}
