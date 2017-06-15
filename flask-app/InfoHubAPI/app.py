@@ -3,7 +3,7 @@ import datetime
 import json
 import requests
 import base64
-from api_keys import API
+from .api_keys import API
 app = Flask(__name__)
 
 @app.route('/')
