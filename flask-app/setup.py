@@ -14,7 +14,7 @@ setup(
     description='',
     long_description=readme,
     author='Anton Levholm',
-#    author_email='me@kennethreitz.com',
+#    author_email='',
 #    url='https://github.com/Levis92/InfoHub',
     license=license,
     packages=find_packages(exclude=('tests', 'docs')),
