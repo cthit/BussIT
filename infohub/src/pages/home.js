@@ -7,10 +7,11 @@ import Weather from '../components/weather/widget';
 
 class Home extends Component {
   render() {
+    const API = 'http://localhost:5000';
     return (
       <div>
         <Instagram />
-        <Vasttrafik />
+        <Vasttrafik url={API} />
         <Weather />
         <Clock />
       </div>
