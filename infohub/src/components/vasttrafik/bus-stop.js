@@ -14,7 +14,7 @@ class BusStop extends Component {
   }
 
   addDepartureItem() {
-    if (this.state.result.Departure) {
+    if (this.state.result) {
       return this.state.result.map( (e, i) => <DepartureItem key={i} data={e} />);
     }
   }
@@ -23,19 +23,15 @@ class BusStop extends Component {
     request
       .get(this.props.url + '/vasttrafik/' + this.props.data.id)
       .accept('json')
-      .end(function(err, res){
+      .end( (err, res) => {
         if (res) {
-          res = JSON.parse(res.text)
+          res = JSON.parse(res.text);
           console.log(res.Departure);
-          this.update(res.Departure)
+          this.setState({
+            result: res.Departure
+          });
         }
-  });
-  }
-
-  update(response) {
-    this.setState({
-      result: response
-    });
+      });
   }
 
   componentWillMount() {
