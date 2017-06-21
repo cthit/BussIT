@@ -2,39 +2,39 @@ import React, { Component } from 'react';
 import '../../App.css';
 import Header from './header'
 import DepartureItem from './departure-item'
-var request = require('superagent');
-let jsonp = require('superagent-jsonp');
+let request = require('superagent');
 
 class BusStop extends Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      result: {}
+      result: []
     }
   }
 
   addDepartureItem() {
     if (this.state.result.Departure) {
-      return this.state.result.Departure.map( (e, i) => <DepartureItem key={i} data={e} />);
+      return this.state.result.map( (e, i) => <DepartureItem key={i} data={e} />);
     }
   }
 
   fetchData() {
     request
       .get(this.props.url + '/vasttrafik/' + this.props.data.id)
-      .use(jsonp)
+      .accept('json')
       .end(function(err, res){
-        console.log(res);
         if (res) {
-          this.update(res)
+          res = JSON.parse(res.text)
+          console.log(res.Departure);
+          this.update(res.Departure)
         }
   });
   }
 
-  update(result) {
+  update(response) {
     this.setState({
-      result: result
+      result: response
     });
   }
 
