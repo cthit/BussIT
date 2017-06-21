@@ -13,7 +13,7 @@ div[data-reactroot] {
 .vasttrafik {
   min-width: 620px;
   border: 1px solid lightgrey;
-  background-color: rgba(75, 17, 144, 0.6);
+  background-color: rgba(75, 17, 144, 0.8);
   color: #c8c8c8;
   font-size: 1.2rem; }
   .vasttrafik ul {
@@ -30,11 +30,12 @@ div[data-reactroot] {
     .vasttrafik .vasttrafik-header .next-departure, .vasttrafik .widget-list-item .next-departure {
       flex: 3; }
   .vasttrafik .vasttrafik-header {
-    border-bottom: 2px solid rgba(100, 100, 100, 0.8);
+    border-bottom: 2px solid rgba(170, 92, 216, 0.5);
     padding-bottom: 0.3em;
     margin-bottom: 7px; }
     .vasttrafik .vasttrafik-header .bus-stop {
-      color: grey;
+      color: #aa5cd8;
+      text-shadow: 1px 1px 2px rgba(75, 17, 144, 0.9);
       margin-top: 7px;
       margin-bottom: 5px; }
   .vasttrafik .widget-list-item, .vasttrafik .vasttrafik-header > li {
@@ -51,7 +52,7 @@ div[data-reactroot] {
 
 .instagram {
   background-color: rgba(240, 0, 240, 0.5);
-  border: 1px solid rgba(100, 100, 100, 0.8);
+  border: 1px solid rgba(170, 92, 216, 0.5);
   width: 45vh;
   height: 45vh;
   display: flex;
