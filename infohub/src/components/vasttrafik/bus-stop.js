@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import '../../App.css';
 import Header from './header'
-import DepartureItem from './departure-item'
+import DepartureList from './departure-list'
 let request = require('superagent');
 
 class BusStop extends Component {
@@ -13,12 +13,6 @@ class BusStop extends Component {
     }
   }
 
-  addDepartureItem() {
-    if (this.state.result) {
-      return this.state.result.map( (e, i) => <DepartureItem key={i} data={e} />);
-    }
-  }
-
   fetchData() {
     request
       .get(this.props.url + '/vasttrafik/' + this.props.data.id)
@@ -26,7 +20,6 @@ class BusStop extends Component {
       .end( (err, res) => {
         if (res) {
           res = JSON.parse(res.text);
-          console.log(res.Departure);
           this.setState({
             result: res.Departure
           });
@@ -48,9 +41,7 @@ class BusStop extends Component {
     return (
       <div>
         <Header busStop={this.props.data.name} />
-        <ul>
-          {this.addDepartureItem()}
-        </ul>
+        <DepartureList data={this.state.result} />
       </div>
     );
   }
