@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, Response
 from .vasttrafik import getVasttrafikJSON
 app = Flask(__name__)
 
@@ -8,4 +8,6 @@ def hello_world():
 
 @app.route('/vasttrafik/<id>')
 def vasttrafik(id=None):
-    return getVasttrafikJSON(id)
+    resp = Response(getVasttrafikJSON(id))
+    resp.headers['Access-Control-Allow-Origin'] = 'http://localhost:3000'
+    return resp
