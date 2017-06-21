@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import '../../App.css';
 let request = require('superagent');
 
+// location format: [latitude],[longitude]
 const location =
   {
     name: 'Göteborg',
