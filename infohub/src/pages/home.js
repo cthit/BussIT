@@ -12,7 +12,7 @@ class Home extends Component {
       <div>
         <Instagram />
         <Vasttrafik url={API} />
-        <Weather />
+        <Weather url={API} />
         <Clock />
       </div>
     );
