@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import '../../App.css';
 let moment = require('moment');
+require('moment/locale/sv.js');
+moment.locale('sv');
 
 class DepartureItem extends Component {
 
