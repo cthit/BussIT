@@ -43,6 +43,7 @@ div[data-reactroot] {
     display: flex; }
 
 .clock {
+  min-width: 41vw;
   color: #c8c8c8;
   background-color: rgba(0, 0, 0, 0.7);
   border: 1px solid lightgrey; }
