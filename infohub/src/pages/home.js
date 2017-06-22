@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import '../App.css';
 import Vasttrafik from '../components/vasttrafik/widget';
 import Clock from '../components/clock/widget';
-import Instagram from '../components/instagram/widget';
+import Twitter from '../components/twitter/widget';
 import Weather from '../components/weather/widget';
 
 class Home extends Component {
@@ -10,7 +10,7 @@ class Home extends Component {
     const API = 'http://localhost:5000';
     return (
       <div>
-        <Instagram />
+        <Twitter url={API} />
         <Vasttrafik url={API} />
         <Weather url={API} />
         <Clock />
