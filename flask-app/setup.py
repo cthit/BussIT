@@ -18,5 +18,5 @@ setup(
 #    url='https://github.com/Levis92/InfoHub',
     license=license,
     packages=find_packages(exclude=('tests', 'docs')),
-    install_requires=['flask', 'requests']
+    install_requires=['flask', 'requests', 'beautifulsoup4']
 )

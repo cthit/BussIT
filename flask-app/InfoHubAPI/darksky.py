@@ -9,6 +9,7 @@ def getDarkSkyJSON(location):
     request = {
         'lang': 'sv',
         'units': 'si',
+        'exclude': ['flags'],
     }
     requestURL = host + baseurl + authKey + '/' + location
     r = requests.get(requestURL, params=request)
