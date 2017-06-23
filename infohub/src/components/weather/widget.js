@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import '../../App.css';
+import CurrentWeather from './current-weather';
+import HourlyWeather from './hourly-weather';
 let request = require('superagent');
 
 // location format: [latitude],[longitude]
@@ -14,7 +16,9 @@ class Weather extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      result: []
+      data: {},
+      currently: {},
+      hourlyData: []
     }
   }
 
@@ -26,9 +30,11 @@ class Weather extends Component {
         if (res) {
           res = JSON.parse(res.text);
           this.setState({
-            result: res
+            data: res,
+            currently: res.currently,
+            hourlyData: res.hourly.data
           });
-        }
+        } else this.fetchData();
       });
   }
 
@@ -45,8 +51,9 @@ class Weather extends Component {
   render() {
     return (
       <div className="widget weather">
-        Weather goes here
-        <a href="https://darksky.net/poweredby/">Powered by Dark Sky</a>
+        <CurrentWeather location={location} data={this.state.data} currently={this.state.currently} />
+        <HourlyWeather data={this.state.hourlyData} />
+        <a id="darksky-link" href="https://darksky.net/poweredby/">Powered by Dark Sky</a>
       </div>
     );
   }

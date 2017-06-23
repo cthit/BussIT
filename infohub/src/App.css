@@ -46,7 +46,10 @@ div[data-reactroot] {
   min-width: 41vw;
   color: #c8c8c8;
   background-color: rgba(0, 0, 0, 0.7);
-  border: 1px solid lightgrey; }
+  border: 1px solid lightgrey;
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
   .clock .time {
     font-size: 8rem; }
   .clock .date {
@@ -75,9 +78,62 @@ div[data-reactroot] {
     height: 10%; }
 
 .weather {
-  width: 30vw;
-  height: 20vh;
-  background-color: rgba(42, 81, 142, 0.9);
-  border: 1px solid lightgrey; }
+  width: 47vw;
+  height: 35vh;
+  background-color: rgba(42, 81, 142, 0.8);
+  color: #c8c8c8;
+  border: 1px solid lightgrey;
+  padding: 15px 20px; }
+  .weather .current-weather {
+    height: 58%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between; }
+    .weather .current-weather .main {
+      flex: 3; }
+      .weather .current-weather .main h2 {
+        margin: 0;
+        font-size: 0.9rem; }
+      .weather .current-weather .main h6 {
+        color: #969696;
+        margin: 3px 0; }
+      .weather .current-weather .main img {
+        margin-top: 1em; }
+    .weather .current-weather .sidebar {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex: 1; }
+      .weather .current-weather .sidebar h1 {
+        font-size: 4rem;
+        margin: 2px 0; }
+      .weather .current-weather .sidebar h4 {
+        font-size: 1rem;
+        margin: 1em 0 0.2em 0; }
+  .weather .hourly-weather {
+    width: 100%;
+    height: 42%;
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid rgba(200, 200, 200, 0.3);
+    padding-top: 10px; }
+    .weather .hourly-weather .hourly-weather-item {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      flex: 1; }
+      .weather .hourly-weather .hourly-weather-item img {
+        width: 70%; }
+      .weather .hourly-weather .hourly-weather-item h5 {
+        margin: 0.7em 0;
+        text-align: center; }
+  .weather #darksky-link {
+    text-decoration: none;
+    color: #9bc2d4;
+    font-size: 0.7rem;
+    position: fixed;
+    bottom: 1px;
+    left: 1px; }
 
 /*# sourceMappingURL=App.css.map */
