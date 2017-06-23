@@ -98,7 +98,7 @@ div[data-reactroot] {
         color: #969696;
         margin: 3px 0; }
       .weather .current-weather .main img {
-        margin-top: 1em; }
+        height: 70%; }
     .weather .current-weather .sidebar {
       display: flex;
       flex-direction: column;

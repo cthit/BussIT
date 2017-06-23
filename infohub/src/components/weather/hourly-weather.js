@@ -11,7 +11,6 @@ class HourlyWeather extends Component {
       for (var i = 0; i <= 10 && i < this.props.data.length ; i++) {
           data[i] = this.props.data[i];
       }
-      console.log(data);
       return data.map( (e, i) => <HourlyWeatherItem key={i} data={e} /> );
     }
   }

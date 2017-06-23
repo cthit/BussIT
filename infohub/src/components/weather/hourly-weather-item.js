@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import '../../App.css';
+import addIcon from '../../images/weather-icons/add-icons';
 
 
 class HourlyWeatherItem extends Component {
@@ -17,7 +18,7 @@ class HourlyWeatherItem extends Component {
     return (
       <div className="hourly-weather-item">
         <h5>{this.getTime(this.props.data.time)}</h5>
-        <img src={this.addIcon(this.props.data.icon)} alt="" />
+        <img src={addIcon(this.props.data.icon)} alt="" />
         <h5>{Math.round(this.props.data.temperature)}°</h5>
       </div>
     );
