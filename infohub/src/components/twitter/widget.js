@@ -24,8 +24,8 @@ class Twitter extends Component {
           res = JSON.parse(res.text);
           this.setState({
             images: res.images,
-            image: res.images[this.state.count],
-            count: this.state.count+1
+            image: res.images[0],
+            count: 1
           });
         } else this.fetchData();
       });
@@ -36,13 +36,16 @@ class Twitter extends Component {
   }
 
   componentDidMount() {
-     window.setInterval(function() {
+    window.setInterval(function() {
       let count = this.state.count;
       let images = this.state.images;
       this.setState({
         image: images[count],
         count: count < images.length - 1 ? count+1 : 0
       });
+      if (count === 0) {
+        this.fetchData();
+      }
     }.bind(this), 10000);
   }
 
