@@ -1,5 +1,5 @@
 # InfoHub
-This project is made for my personal use, but you're welcome to use any part of the code without restrictions. Some widgets may need API keys and it's up to you to acquire those yourself.
+This project is made for my personal use, but you're welcome to use any part of the code. Some widgets may need API keys and it's up to you to acquire those yourself.
 
 ## Application
 InfoHub is an application to display widgets on a screen. That's it. No accounts or special features for touchscreen monitors. Just for displaying information.
