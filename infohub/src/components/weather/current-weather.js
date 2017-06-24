@@ -16,6 +16,8 @@ class CurrentWeather extends Component {
         <div className="sidebar">
           <h1>{Math.round(this.props.currently.temperature)}°</h1>
           <h4>{this.props.currently.summary}</h4>
+          <h5>Vindhastighet: {this.props.currently.windSpeed} m/s</h5>
+          <h5>Luftfuktighet: {this.props.currently.humidity*100}%</h5>
         </div>
       </div>
     );
