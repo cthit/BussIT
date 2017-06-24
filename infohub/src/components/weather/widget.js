@@ -45,7 +45,7 @@ class Weather extends Component {
   componentDidMount() {
      window.setInterval(function() {
       this.fetchData();
-    }.bind(this), 1800000);
+    }.bind(this), 300000);
   }
 
   render() {
