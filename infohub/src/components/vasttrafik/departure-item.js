@@ -7,26 +7,34 @@ moment.locale('sv');
 class DepartureItem extends Component {
 
   render() {
+    const bgColor = this.props.data.bgColor;
+    const fgColor = this.props.data.fgColor;
+    const sname = this.props.data.sname;
+    const direction = this.props.data.direction;
+    const rtDate = this.props.data.rtDate;
+    const rtTime = this.props.data.rtTime;
+    const nextRtDate = this.props.data.nextRtDate;
+    const nextRtTime = this.props.data.nextRtTime;
 
     const spanStyle = {
-      color: this.props.data.bgColor,
-      backgroundColor: this.props.data.fgColor,
+      color: bgColor,
+      backgroundColor: fgColor,
       padding: '0.1em 0.3em',
       borderRadius: '0.2em'
     };
 
-    const now = this.props.data.rtDate + ' ' + this.props.data.rtTime;
-    const next = this.props.data.nextRtDate + ' ' + this.props.data.nextRtTime;
+    const now = rtDate + ' ' + rtTime;
+    const next = nextRtDate + ' ' + nextRtTime;
 
     return (
       <li className="widget-list-item">
         <div className="line">
           <span style={spanStyle}>
-            {this.props.data.sname}
+            {sname}
           </span>
         </div>
         <div className="destination">
-          {this.props.data.direction}
+          {direction}
         </div>
         <div className="departs">
           {moment(now, "YYYY-MM-DD HH:mm").fromNow()}

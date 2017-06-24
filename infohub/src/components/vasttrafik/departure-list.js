@@ -5,8 +5,9 @@ import DepartureItem from './departure-item';
 class DepartureList extends Component {
 
   addDepartureItem() {
-    if (this.props.data) {
-      return this.props.data.map( (e, i) => <DepartureItem key={i} data={e} />);
+    let data = this.props.data;
+    if (data) {
+      return data.map( (e, i) => <DepartureItem key={i} data={e} />);
     }
   }
 

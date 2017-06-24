@@ -50,9 +50,11 @@ class Twitter extends Component {
   }
 
   render() {
+    const IMAGE = this.state.image;
+    
     return (
       <div className="widget twitter">
-        <img src={this.state.image} alt="" />
+        <img src={IMAGE} alt="" />
         <h3>@{user}</h3>
       </div>
     );

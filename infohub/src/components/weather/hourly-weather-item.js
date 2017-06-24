@@ -10,16 +10,27 @@ class HourlyWeatherItem extends Component {
   }
 
   getTime(timeString) {
-    let time = new Date(timeString*1000);
-    return time.getHours();
+    let time = new Date(timeString*1000).getHours();
+    let actualTime = new Date().getHours();
+    if (time === actualTime) {
+      return 'Nu';
+    } else if (time < 10) {
+      return '0' + time;
+    } else {
+      return time;
+    }
   }
 
   render() {
+    const time = this.props.data.time;
+    const icon = this.props.data.icon;
+    const temperature = this.props.data.temperature;
+    
     return (
       <div className="hourly-weather-item">
-        <h5>{this.getTime(this.props.data.time)}</h5>
-        <img src={addIcon(this.props.data.icon)} alt="" />
-        <h5>{Math.round(this.props.data.temperature)}°</h5>
+        <h5>{this.getTime(time)}</h5>
+        <img src={addIcon(icon)} alt="" />
+        <h5>{Math.round(temperature)}°</h5>
       </div>
     );
   }

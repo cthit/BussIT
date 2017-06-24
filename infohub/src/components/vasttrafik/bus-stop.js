@@ -38,10 +38,13 @@ class BusStop extends Component {
   }
 
   render() {
+    const name = this.props.data.name;
+    const RESULT = this.state.result;
+
     return (
       <div>
-        <Header busStop={this.props.data.name} />
-        <DepartureList data={this.state.result} />
+        <Header busStop={name} />
+        <DepartureList data={RESULT} />
       </div>
     );
   }

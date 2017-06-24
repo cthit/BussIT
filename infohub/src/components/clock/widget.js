@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import '../../App.css';
 
 class Clock extends Component {
+  
   setTime() {
     var currentdate = new Date();
     var hours = currentdate.getHours();
@@ -59,10 +60,17 @@ class Clock extends Component {
   }
 
   render() {
+    const HOURS = this.state.hours;
+    const MINUTES = this.state.minutes;
+    const SECONDS = this.state.seconds;
+    const DATE = this.state.date;
+    const MONTH = this.state.month;
+    const YEAR = this.state.year;
+
     return (
       <div className="widget clock">
-        <div className="time">{this.state.hours}:{this.state.minutes}:{this.state.seconds}</div>
-        <div className="date">{this.state.date} {this.state.month} {this.state.year}</div>
+        <div className="time">{HOURS}:{MINUTES}:{SECONDS}</div>
+        <div className="date">{DATE} {MONTH} {YEAR}</div>
       </div>
     );
   }

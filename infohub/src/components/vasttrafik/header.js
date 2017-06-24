@@ -3,9 +3,11 @@ import '../../App.css';
 
 class Header extends Component {
   render() {
+    const busStop = this.props.busStop;
+
     return (
       <div className="vasttrafik-header widget-header">
-        <h5 className="bus-stop">{this.props.busStop}</h5>
+        <h5 className="bus-stop">{busStop}</h5>
         <li>
           <div className="line">Linje</div>
           <div className="destination">Riktning</div>

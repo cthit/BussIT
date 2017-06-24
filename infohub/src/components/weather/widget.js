@@ -49,10 +49,14 @@ class Weather extends Component {
   }
 
   render() {
+    const DATA = this.state.data;
+    const CURRENTLY = this.state.currently;
+    const HOURLY = this.state.hourlyData;
+    
     return (
       <div className="widget weather">
-        <CurrentWeather location={location} data={this.state.data} currently={this.state.currently} />
-        <HourlyWeather data={this.state.hourlyData} />
+        <CurrentWeather location={location} data={DATA} currently={CURRENTLY} />
+        <HourlyWeather data={HOURLY} />
         <a id="darksky-link" href="https://darksky.net/poweredby/">Powered by Dark Sky</a>
       </div>
     );
