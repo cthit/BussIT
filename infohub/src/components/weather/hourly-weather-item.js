@@ -10,8 +10,8 @@ class HourlyWeatherItem extends Component {
   }
 
   getTime(timeString) {
-    let time = new Date(timeString);
-    return time.getHours() + ':' + time.getMinutes();
+    let time = new Date(timeString*1000);
+    return time.getHours();
   }
 
   render() {
