@@ -14,7 +14,7 @@ def getPosts(user):
     posts = []
     r = requests.get('https://twitter.com/' + user)
     r.raise_for_status()
-    noStarchSoup = bs4.BeautifulSoup(r.text)
+    noStarchSoup = bs4.BeautifulSoup(r.text, "html.parser")
     elems = noStarchSoup.select('div.AdaptiveMedia-photoContainer.js-adaptive-photo > img')
     for elem in elems:
         posts.append(elem.attrs['src'])
