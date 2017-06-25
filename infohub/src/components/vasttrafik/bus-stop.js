@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import '../../App.css';
-import Header from './header'
-import DepartureList from './departure-list'
+import Header from './header';
+import DepartureList from './departure-list';
+import { API } from '../widget-settings';
 let request = require('superagent');
 
 class BusStop extends Component {
@@ -15,7 +16,7 @@ class BusStop extends Component {
 
   fetchData() {
     request
-      .get(this.props.url + '/vasttrafik/' + this.props.data.id)
+      .get(API + '/vasttrafik/' + this.props.data.id)
       .accept('json')
       .end( (err, res) => {
         if (res) {
@@ -34,7 +35,7 @@ class BusStop extends Component {
   componentDidMount() {
      window.setInterval(function() {
       this.fetchData();
-    }.bind(this), 10000);
+    }.bind(this), 5000);
   }
 
   render() {

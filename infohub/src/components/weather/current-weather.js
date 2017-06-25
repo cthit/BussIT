@@ -17,7 +17,7 @@ class CurrentWeather extends Component {
 
     function checkLength(input, maxLength) {
       if (input) {
-        if (summary.length > maxLength)
+        if (input.length > maxLength)
           return true;
       } else return false;
     }

@@ -2,14 +2,9 @@ import React, { Component } from 'react';
 import '../../App.css';
 import CurrentWeather from './current-weather';
 import HourlyWeather from './hourly-weather';
+import { API, weatherLocation } from '../widget-settings';
 let request = require('superagent');
 
-// location format: [latitude],[longitude]
-const location =
-  {
-    name: 'Göteborg',
-    coordinates: '57.696994,11.9865'
-  };
 
 class Weather extends Component {
 
@@ -24,7 +19,7 @@ class Weather extends Component {
 
   fetchData() {
     request
-      .get(this.props.url + '/darksky/' + location.coordinates)
+      .get(API + '/darksky/' + weatherLocation.coordinates)
       .accept('json')
       .end( (err, res) => {
         if (res) {
@@ -52,10 +47,10 @@ class Weather extends Component {
     const DATA = this.state.data;
     const CURRENTLY = this.state.currently;
     const HOURLY = this.state.hourlyData;
-    
+
     return (
       <div className="widget weather">
-        <CurrentWeather location={location} data={DATA} currently={CURRENTLY} />
+        <CurrentWeather location={weatherLocation} data={DATA} currently={CURRENTLY} />
         <HourlyWeather data={HOURLY} />
         <a id="darksky-link" href="https://darksky.net/poweredby/">Powered by Dark Sky</a>
       </div>

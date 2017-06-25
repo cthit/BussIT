@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import '../../App.css';
+import { API, twitterUser } from '../widget-settings';
 let request = require('superagent');
 
-const user = 'EmrgencyKittens';
 
 class Twitter extends Component {
 
@@ -17,7 +17,7 @@ class Twitter extends Component {
 
   fetchData() {
     request
-      .get(this.props.url + '/twitter/' + user)
+      .get(API + '/twitter/' + twitterUser)
       .accept('json')
       .end( (err, res) => {
         if (res) {
@@ -51,11 +51,11 @@ class Twitter extends Component {
 
   render() {
     const IMAGE = this.state.image;
-    
+
     return (
       <div className="widget twitter">
         <img src={IMAGE} alt="" />
-        <h3>@{user}</h3>
+        <h3>@{twitterUser}</h3>
       </div>
     );
   }
