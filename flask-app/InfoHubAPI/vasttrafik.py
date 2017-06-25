@@ -47,18 +47,43 @@ def modifyJSON(data):
     result = {'Departure': []}
     tmp['Departure'] = data['DepartureBoard']['Departure']
     data = tmp
-    departures = {v['direction']:v for v in data['Departure']}
-    tmp_list = departures.keys()
-    for stop_id in tmp_list:
-        tmp = list(filter(lambda d: d['direction'] in stop_id, data['Departure']))
-        if len(tmp) > 1:
+    #departures = {v['direction']:v for v in data['Departure']}
+    departures = sortDepartures(data)
+    key_list = departures.keys()
+    for stop_id in key_list:
+        tmp = list(filter(lambda d: d['sname']+d['direction'] in stop_id, data['Departure']))
+        try:
             departures[stop_id]['rtTime'] = tmp[0]['rtTime']
+        except Exception as e:
+            departures[stop_id]['rtTime'] = tmp[0]['time']
+        try:
             departures[stop_id]['rtDate'] = tmp[0]['rtDate']
-            departures[stop_id]['nextRtTime'] = tmp[1]['rtTime']
-            departures[stop_id]['nextRtDate'] = tmp[1]['rtDate']
-            #departures[stop_id]['nextAccessibility'] = tmp[1]['accessibility']
+        except Exception as e:
+            departures[stop_id]['rtDate'] = tmp[0]['date']
+        if len(tmp) > 1:
+            try:
+                departures[stop_id]['nextRtTime'] = tmp[1]['rtTime']
+            except Exception as e:
+                departures[stop_id]['nextRtTime'] = tmp[1]['time']
+            try:
+                departures[stop_id]['nextRtDate'] = tmp[1]['rtDate']
+            except Exception as e:
+                departures[stop_id]['nextRtDate'] = tmp[1]['date']
+            departures[stop_id]['nextAccessibility'] = tmp[1]['accessibility']
         del departures[stop_id]['JourneyDetailRef']
         del departures[stop_id]['journeyid']
         del departures[stop_id]['stopid']
+        del departures[stop_id]['time']
+        del departures[stop_id]['date']
         result['Departure'].append(departures[stop_id])
     return json.dumps(result)
+
+def sortDepartures(data):
+    tmp = {}
+    output = {}
+    for d in data['Departure']:
+        if d['sname'] + d['direction'] in tmp:
+            continue
+        tmp[d['name']+d['direction']] = 1
+        output[d['sname']+d['direction']] = d
+    return output

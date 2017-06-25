@@ -10,7 +10,7 @@ with open('LICENSE') as f:
 
 setup(
     name='InfoHubAPI',
-    version='0.1.1',
+    version='0.1.4',
     description='',
     long_description=readme,
     author='Anton Levholm',
