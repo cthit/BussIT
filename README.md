@@ -17,6 +17,8 @@ InfoHub is an application to display widgets on a screen. That's it. No accounts
 The frontend is built with the Javascript library [React](https://facebook.github.io/react/) and is styled with the CSS extension language [Sass](http://sass-lang.com).
 
 ### Development
+First you need to add a copy of `widget-settings.example.js` and rename it to `widget-settings.js`. The file can be found in `infohub/src/components/`. Add your own settings in the file.
+
 The first time you run the application (and every time you add new dependencies) you need do run:
 ```
 npm install
@@ -24,6 +26,14 @@ npm install
 After that you only need to run:
 ```
 npm start
+```
+
+#### Sass
+To compile the Sass files you need to have Sass installed. Instructions on how to do that can be found [here](http://sass-lang.com/install).
+
+There's a [npm](https://www.npmjs.com) script included, so to compile you only need to run:
+```
+npm run sass
 ```
 
 ### Production
@@ -36,6 +46,8 @@ npm build
 The backend runs on the Python framework [Flask](http://flask.pocoo.org) and is used as an [API](https://en.wikipedia.org/wiki/Application_programming_interface) to request data and structure it in a format more convenient for the frontend application.
 
 ### Development
+First you need to add a copy of `api_keys.example.py` and rename it to `api_keys.py`. The file can be found in `flask-app/InfoHubAPI/`. Add your API keys in this file.
+
 The first time you run the application (and every time you add new dependencies) you need do run:
 ```
 ./init.sh
@@ -51,6 +63,7 @@ There are currently no specified script for production mode.
 ## Dependencies
 * [React](https://facebook.github.io/react/)
 * [Flask](http://flask.pocoo.org)
+* [npm](https://www.npmjs.com)
 * [Sass](http://sass-lang.com)
 * [SuperAgent](https://visionmedia.github.io/superagent/)
 * [Requests: HTTP for Humans](http://docs.python-requests.org/en/master/)
