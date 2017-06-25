@@ -1,34 +1,5 @@
-# Created by https://www.gitignore.io/api/o,osx,python
 
-#!! ERROR: o is undefined. Use list command to see defined gitignore types !!#
-
-### OSX ###
-.DS_Store
-.AppleDouble
-.LSOverride
-
-# Icon must end with two \r
-Icon
-
-
-# Thumbnails
-._*
-
-# Files that might appear in the root of a volume
-.DocumentRevisions-V100
-.fseventsd
-.Spotlight-V100
-.TemporaryItems
-.Trashes
-.VolumeIcon.icns
-
-# Directories potentially created on remote AFP share
-.AppleDB
-.AppleDesktop
-Network Trash Folder
-Temporary Items
-.apdisk
-
+# Created by https://www.gitignore.io/api/sass,python
 
 ### Python ###
 # Byte-compiled / optimized / DLL files
@@ -53,6 +24,7 @@ lib64/
 parts/
 sdist/
 var/
+wheels/
 *.egg-info/
 .installed.cfg
 *.egg
@@ -86,8 +58,9 @@ coverage.xml
 *.log
 local_settings.py
 
-# Flask instance folder
+# Flask stuff:
 instance/
+.webassets-cache
 
 # Scrapy stuff:
 .scrapy
@@ -98,7 +71,7 @@ docs/_build/
 # PyBuilder
 target/
 
-# IPython Notebook
+# Jupyter Notebook
 .ipynb_checkpoints
 
 # pyenv
@@ -107,12 +80,32 @@ target/
 # celery beat schedule file
 celerybeat-schedule
 
+# SageMath parsed files
+*.sage.py
+
 # dotenv
 .env
 
 # virtualenv
+.venv
 venv/
 ENV/
 
 # Spyder project settings
 .spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+### Sass ###
+.sass-cache/
+*.css.map
+
+# End of https://www.gitignore.io/api/sass,python
+
+# API KEYS
+api_keys.py
