@@ -69,7 +69,10 @@ def modifyJSON(data):
                 departures[stop_id]['nextRtDate'] = tmp[1]['rtDate']
             except Exception as e:
                 departures[stop_id]['nextRtDate'] = tmp[1]['date']
-            departures[stop_id]['nextAccessibility'] = tmp[1]['accessibility']
+            try:
+                departures[stop_id]['nextAccessibility'] = tmp[1]['accessibility']
+            except Exception as e:
+                pass
         del departures[stop_id]['JourneyDetailRef']
         del departures[stop_id]['journeyid']
         del departures[stop_id]['stopid']
