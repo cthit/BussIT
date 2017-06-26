@@ -39,7 +39,7 @@ npm run sass
 ### Production
 To build the React application you run:
 ```
-npm build
+npm run build
 ```
 
 ## Flask
