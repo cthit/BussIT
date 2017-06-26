@@ -55,7 +55,9 @@ class Twitter extends Component {
     return (
       <div className="widget twitter">
         <img src={IMAGE} alt="" />
-        <h3>@{twitterUser}</h3>
+        <div>
+          <h3>@{twitterUser}</h3>
+        </div>
       </div>
     );
   }

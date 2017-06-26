@@ -30,14 +30,16 @@ class CurrentWeather extends Component {
           <img src={addIcon(icon)} alt="" />
         </div>
         <div className="sidebar">
-          <h1>{Math.round(temperature)}°</h1>
-          {
-            checkLength(summary, 16) ?
-              <h4 style={{fontSize: 0.8 + 'rem'}}>{summary}</h4> :
-              <h4>{summary}</h4>
-          }
-          <h5>Vindhastighet: {windSpeed} m/s</h5>
-          <h5>Luftfuktighet: {humidity}%</h5>
+          <div>
+            <h1>{Math.round(temperature)}°</h1>
+            {
+              checkLength(summary, 16) ?
+                <h4 style={{fontSize: 0.8 + 'rem'}}>{summary}</h4> :
+                <h4>{summary}</h4>
+            }
+            <h5>Vindhastighet: {windSpeed} m/s</h5>
+            <h5>Luftfuktighet: {humidity}%</h5>
+          </div>
         </div>
       </div>
     );

@@ -16,7 +16,7 @@ div[data-reactroot] {
   border: 1px solid lightgrey;
   background-color: rgba(75, 17, 144, 0.8);
   color: #c8c8c8;
-  font-size: 1.12rem; }
+  font-size: 1.4rem; }
   .vasttrafik ul {
     padding-left: 0;
     margin: 0; }
@@ -48,12 +48,16 @@ div[data-reactroot] {
   background-color: rgba(0, 0, 0, 0.7);
   border: 1px solid lightgrey;
   display: flex;
-  flex-direction: column;
-  align-items: center; }
-  .clock .time {
-    font-size: 8rem; }
-  .clock .date {
-    font-size: 3.5rem; }
+  align-items: center;
+  justify-content: center; }
+  .clock div {
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+    .clock div .time {
+      font-size: 8rem; }
+    .clock div .date {
+      font-size: 3.5rem; }
 
 .twitter {
   background-color: rgba(209, 219, 237, 0.8);
@@ -67,15 +71,18 @@ div[data-reactroot] {
     border-radius: 0.5em 0.5em 0 0;
     width: 100%;
     height: 90%; }
-  .twitter h3 {
-    color: #6f2db5;
-    text-shadow: 1px 1px 1px rgba(209, 219, 237, 0.9);
-    font-size: 1rem;
-    text-align: center;
-    vertical-align: middle;
-    margin: 5px 0 0 0;
+  .twitter div {
     width: 100%;
-    height: 10%; }
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    .twitter div h3 {
+      color: #6f2db5;
+      text-shadow: 1px 1px 1px rgba(209, 219, 237, 0.9);
+      font-size: 1.3rem;
+      text-align: center;
+      margin: 0; }
 
 .weather {
   width: 47vw;
@@ -101,19 +108,22 @@ div[data-reactroot] {
         height: 70%; }
     .weather .current-weather .sidebar {
       display: flex;
-      flex-direction: column;
+      justify-content: center;
       align-items: center;
       flex: 1;
       text-align: center; }
-      .weather .current-weather .sidebar h1 {
-        font-size: 4rem;
-        margin: 2px 0; }
-      .weather .current-weather .sidebar h4 {
-        font-size: 1.2rem;
-        margin: 0.1em 0 0.2em 0; }
-      .weather .current-weather .sidebar h5 {
-        margin: 1px 0;
-        font-size: 0.5rem; }
+      .weather .current-weather .sidebar div {
+        display: flex;
+        flex-direction: column; }
+        .weather .current-weather .sidebar div h1 {
+          font-size: 4.5rem;
+          margin: 2px 0; }
+        .weather .current-weather .sidebar div h4 {
+          font-size: 1.3rem;
+          margin: 0.1em 0 0.2em 0; }
+        .weather .current-weather .sidebar div h5 {
+          margin: 1px 0;
+          font-size: 0.7rem; }
   .weather .hourly-weather {
     width: 100%;
     height: 42%;

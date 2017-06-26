@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import '../../App.css';
 
 class Clock extends Component {
-  
+
   setTime() {
     var currentdate = new Date();
     var hours = currentdate.getHours();
@@ -69,8 +69,10 @@ class Clock extends Component {
 
     return (
       <div className="widget clock">
-        <div className="time">{HOURS}:{MINUTES}:{SECONDS}</div>
-        <div className="date">{DATE} {MONTH} {YEAR}</div>
+        <div>
+          <div className="time">{HOURS}:{MINUTES}:{SECONDS}</div>
+          <div className="date">{DATE + ' ' + MONTH + ' ' + YEAR}</div>
+        </div>
       </div>
     );
   }
