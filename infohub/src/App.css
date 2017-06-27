@@ -30,6 +30,9 @@ div[data-reactroot] {
       flex: 4; }
     .vasttrafik .vasttrafik-header .next-departure, .vasttrafik .widget-list-item .next-departure {
       flex: 3; }
+    .vasttrafik .vasttrafik-header .line, .vasttrafik .vasttrafik-header .destination, .vasttrafik .vasttrafik-header .departs, .vasttrafik .vasttrafik-header .next-departure, .vasttrafik .widget-list-item .line, .vasttrafik .widget-list-item .destination, .vasttrafik .widget-list-item .departs, .vasttrafik .widget-list-item .next-departure {
+      display: flex;
+      align-items: center; }
   .vasttrafik .vasttrafik-header {
     border-bottom: 2px solid rgba(170, 92, 216, 0.5);
     padding-bottom: 0.3em;
