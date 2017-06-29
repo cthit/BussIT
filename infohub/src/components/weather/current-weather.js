@@ -37,8 +37,8 @@ class CurrentWeather extends Component {
                 <h4 style={{fontSize: 0.8 + 'rem'}}>{summary}</h4> :
                 <h4>{summary}</h4>
             }
-            <h5>Vindhastighet: {windSpeed} m/s</h5>
-            <h5>Luftfuktighet: {humidity}%</h5>
+            <h5>Vindhastighet: {Math.round(windSpeed*10)/10} m/s</h5>
+            <h5>Luftfuktighet: {Math.round(humidity*10)/10}%</h5>
           </div>
         </div>
       </div>
