@@ -2,6 +2,7 @@ import datetime
 import json
 import requests
 import base64
+from operator import itemgetter
 from .api_keys import API
 
 def getVasttrafikJSON(id):
@@ -79,6 +80,7 @@ def modifyJSON(data):
         del departures[stop_id]['time']
         del departures[stop_id]['date']
         result['Departure'].append(departures[stop_id])
+    result['Departure'] = sorted(result['Departure'], key=itemgetter('rtDate', 'rtTime'))
     return json.dumps(result)
 
 def sortDepartures(data):
