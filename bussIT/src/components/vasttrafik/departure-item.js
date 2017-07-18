@@ -42,13 +42,23 @@ class DepartureItem extends Component {
         <div className="departs">
           {
             moment(now, "YYYY-MM-DD HH:mm").fromNow() +
-            accessibility === 'wheelchair' ? <FontAwesome className="accessibility-icon" name='wheelchair' /> : ''
+            accessibility === 'wheelchair' ?
+              <FontAwesome
+                className="accessibility-icon"
+                name='wheelchair'
+                size='2x'
+              /> : ''
           }
         </div>
         <div className="next-departure">
           {
             moment(next, "YYYY-MM-DD HH:mm").fromNow() +
-            nextAccessibility === 'wheelchair' ? <FontAwesome className="accessibility-icon" name='wheelchair' /> : ''
+            nextAccessibility === 'wheelchair' ?
+              <FontAwesome
+                className="accessibility-icon"
+                name='wheelchair'
+                size='2x'
+              /> : ''
           }
         </div>
       </li>
