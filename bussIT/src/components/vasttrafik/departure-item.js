@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import '../../App.css';
+let FontAwesome = require('react-fontawesome');
 let moment = require('moment');
 require('moment/locale/sv.js');
 moment.locale('sv');
@@ -15,6 +16,8 @@ class DepartureItem extends Component {
     const rtTime = this.props.data.rtTime;
     const nextRtDate = this.props.data.nextRtDate;
     const nextRtTime = this.props.data.nextRtTime;
+    const accessibility = this.props.data.accessibility;
+    const nextAccessibility = this.props.data.nextAccessibility;
 
     const spanStyle = {
       color: bgColor,
@@ -37,10 +40,16 @@ class DepartureItem extends Component {
           {direction}
         </div>
         <div className="departs">
-          {moment(now, "YYYY-MM-DD HH:mm").fromNow()}
+          {
+            moment(now, "YYYY-MM-DD HH:mm").fromNow() +
+            accessibility === 'wheelchair' ? <FontAwesome className="accessibility-icon" name='wheelchair' /> : ''
+          }
         </div>
         <div className="next-departure">
-          {moment(next, "YYYY-MM-DD HH:mm").fromNow()}
+          {
+            moment(next, "YYYY-MM-DD HH:mm").fromNow() +
+            nextAccessibility === 'wheelchair' ? <FontAwesome className="accessibility-icon" name='wheelchair' /> : ''
+          }
         </div>
       </li>
     );
