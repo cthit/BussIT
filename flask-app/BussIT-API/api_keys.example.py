@@ -4,8 +4,4 @@ API = {
         'key': '',
         'secret': '',
     },
-    # https://darksky.net/dev/
-    'darkSky': {
-        'secret': ''
-    }
 }
