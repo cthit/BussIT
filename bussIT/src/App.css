@@ -1,0 +1,47 @@
+div[data-reactroot] {
+  width: inherit;
+  height: inherit;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap; }
+
+.widget {
+  padding: 20px;
+  width: 100vw;
+  height: 100vh; }
+
+.vasttrafik {
+  background-color: rgba(75, 17, 144, 0.8);
+  color: #c8c8c8;
+  font-size: 1.4rem; }
+  .vasttrafik ul {
+    padding-left: 0;
+    margin: 0; }
+  .vasttrafik .vasttrafik-header, .vasttrafik .widget-list-item {
+    padding: 0.2em 0.4em; }
+    .vasttrafik .vasttrafik-header .line, .vasttrafik .widget-list-item .line {
+      flex: 1; }
+    .vasttrafik .vasttrafik-header .destination, .vasttrafik .widget-list-item .destination {
+      flex: 4; }
+    .vasttrafik .vasttrafik-header .departs, .vasttrafik .widget-list-item .departs {
+      flex: 4; }
+    .vasttrafik .vasttrafik-header .next-departure, .vasttrafik .widget-list-item .next-departure {
+      flex: 3; }
+    .vasttrafik .vasttrafik-header .line, .vasttrafik .vasttrafik-header .destination, .vasttrafik .vasttrafik-header .departs, .vasttrafik .vasttrafik-header .next-departure, .vasttrafik .widget-list-item .line, .vasttrafik .widget-list-item .destination, .vasttrafik .widget-list-item .departs, .vasttrafik .widget-list-item .next-departure {
+      display: flex;
+      align-items: center; }
+  .vasttrafik .vasttrafik-header {
+    border-bottom: 2px solid rgba(170, 92, 216, 0.5);
+    padding-bottom: 0.3em;
+    margin-bottom: 7px; }
+    .vasttrafik .vasttrafik-header .bus-stop {
+      color: #aa5cd8;
+      text-shadow: 1px 1px 2px rgba(75, 17, 144, 0.9);
+      margin-top: 7px;
+      margin-bottom: 5px; }
+  .vasttrafik .widget-list-item, .vasttrafik .vasttrafik-header > li {
+    display: flex; }
+  .vasttrafik .widget-list-item {
+    border-bottom: 1px solid rgba(170, 92, 216, 0.5); }
+
+/*# sourceMappingURL=App.css.map */
