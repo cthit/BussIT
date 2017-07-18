@@ -1,8 +1,6 @@
 # BussIT
 Shows departures from Chalmershållplatsen and Chalmers Tvärgata. Requires [API key](https://en.wikipedia.org/wiki/Application_programming_interface_key) from Västtrafik.
 
-## Application
-InfoHub is an application to display widgets on a screen. That's it. No accounts or special features for touchscreen monitors. Just for displaying information.
 
 ### Current widget
 
