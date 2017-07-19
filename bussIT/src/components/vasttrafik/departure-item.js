@@ -9,7 +9,7 @@ moment.updateLocale('sv', {
     relativeTime : {
         future: "%s",
         past:   "%s sedan",
-        s  : '< 1 min',
+        s  : 'Nu',
         ss : '%d s',
         m:  "1 min",
         mm: "%d min",
@@ -21,18 +21,29 @@ moment.updateLocale('sv', {
 class DepartureItem extends Component {
 
   checkAccessibility(accessibility) {
+    let icon;
     switch (accessibility) {
       case 'wheelChair':
-        return (
-          <i className="accessibility-icon fa fa-wheelchair"></i>
-        );
+        icon = 'wheelchair';
+        break;
       case 'lowCarriage':
-        return (
-          <i className="accessibility-icon fa fa-universal-access"></i>
-        );
+        icon = 'universal-access';
+        break;
       default:
         return;
     }
+    return (
+      <i className={"accessibility-icon fa fa-" + icon}></i>
+    )
+  }
+
+  checkTime(time) {
+    const now = moment();
+    let result = time.isValid() ? time.fromNow() : '';
+    if(now.diff(time, 'seconds') >= 0) {
+      result = 'Nu';
+    }
+    return result;
   }
 
   render() {
@@ -62,6 +73,8 @@ class DepartureItem extends Component {
 
     const now = rtDate + ' ' + rtTime;
     const next = nextRtDate + ' ' + nextRtTime;
+    const time = moment(now, "YYYY-MM-DD HH:mm");
+    const nextTime = moment(next, "YYYY-MM-DD HH:mm");
 
     return (
       <li className="widget-list-item">
@@ -81,8 +94,7 @@ class DepartureItem extends Component {
             this.checkAccessibility(accessibility)
           }
           {
-            moment(now, "YYYY-MM-DD HH:mm").fromNow() !== 'Invalid date' ?
-              moment(now, "YYYY-MM-DD HH:mm").fromNow() : ''
+            this.checkTime(time)
           }
         </div>
         <div className="next-departure">
@@ -90,8 +102,7 @@ class DepartureItem extends Component {
             this.checkAccessibility(nextAccessibility)
           }
           {
-            moment(next, "YYYY-MM-DD HH:mm").fromNow() !== 'Invalid date' ?
-              moment(next, "YYYY-MM-DD HH:mm").fromNow() : ''
+            this.checkTime(nextTime)
           }
         </div>
       </li>
