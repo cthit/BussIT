@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import '../../App.css';
-import 'font-awesome/css/font-awesome.css'
+import 'font-awesome/css/font-awesome.css';
 let moment = require('moment');
 require('moment/locale/sv.js');
 moment.locale('sv');
