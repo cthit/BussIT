@@ -1,12 +1,11 @@
-import React, { Component } from 'react';
-import '../../App.css';
-import BusStop from './bus-stop';
-import { stops } from '../widget-settings';
-
+import React, { Component } from "react";
+import "../../App.css";
+import BusStop from "./bus-stop";
+import { stops } from "../widget-settings";
 
 class Vasttrafik extends Component {
   addBusStops() {
-    return stops.map( (e, i) => <BusStop key={i} data={e} />);
+    return stops.map((e, i) => <BusStop key={i} data={e} />);
   }
 
   render() {
