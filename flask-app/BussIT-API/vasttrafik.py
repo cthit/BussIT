@@ -8,7 +8,7 @@ from .api_keys import API
 
 def get_vasttrafik_json(id):
     authKey = get_access_token()
-    date = f"20{str(datetime.datetime.now().strftime('%y-%m-%d'))}"
+    date = str(datetime.datetime.now().strftime('%Y-%m-%d'))
     time = str(datetime.datetime.now().strftime("%H:%M"))
     host = 'https://api.vasttrafik.se'
     baseurl = '/bin/rest.exe/v2'
