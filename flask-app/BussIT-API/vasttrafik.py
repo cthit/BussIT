@@ -1,4 +1,4 @@
-import datetime
+from datetime import datetime
 import json
 import requests
 import base64
@@ -8,8 +8,8 @@ from .api_keys import API
 
 def get_vasttrafik_json(id):
     authKey = get_access_token()
-    date = str(datetime.datetime.now().strftime('%Y-%m-%d'))
-    time = str(datetime.datetime.now().strftime("%H:%M"))
+    date = datetime.now().strftime('%Y-%m-%d')
+    time = datetime.now().strftime("%H:%M")
     host = 'https://api.vasttrafik.se'
     baseurl = '/bin/rest.exe/v2'
     headers = {
@@ -50,7 +50,7 @@ def modify_json(data):
     result = { 'Departure': [] }
     data['Departure'] = data['DepartureBoard']['Departure']
     del data['DepartureBoard']
-    data['Departure'] = [trim_departure_data(d) for d in data['Departure']]
+    data['Departure'] = [ trim_departure_data(d) for d in data['Departure'] ]
     key_list = get_departure_keys(data['Departure'])
     departures = {}
 
@@ -81,20 +81,16 @@ def trim_departure_data(departure):
     del departure['JourneyDetailRef']
     del departure['journeyid']
     del departure['stopid']
+    departure.setdefault('rtTime', departure['time'])
+    departure.setdefault('rtDate', departure['date'])
     del departure['time']
     del departure['date']
     return departure
 
 
 def add_next_departure(departure, next_departure):
-    try:
-        departure['nextRtTime'] = next_departure['rtTime']
-    except Exception as e:
-        departure['nextRtTime'] = next_departure['time']
-    try:
-        departure['nextRtDate'] = next_departure['rtDate']
-    except Exception as e:
-        departure['nextRtDate'] = next_departure['date']
+    departure['nextRtTime'] = next_departure['rtTime']
+    departure['nextRtDate'] = next_departure['rtDate']
     try:
         departure['nextAccessibility'] = next_departure['accessibility']
     except Exception as e:
