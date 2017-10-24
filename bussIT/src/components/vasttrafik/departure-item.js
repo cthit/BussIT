@@ -18,9 +18,6 @@ moment.updateLocale("sv", {
   }
 });
 
-function joinString(string1, string2) {
-  return string1 + " " + string2;
-}
 
 class DepartureItem extends Component {
   checkAccessibility(accessibility) {
@@ -74,8 +71,8 @@ class DepartureItem extends Component {
       alignItems: "center"
     };
 
-    const now = joinString(rtDate, rtTime);
-    const next = joinString(nextRtDate, nextRtTime);
+    const now = [rtDate, rtTime].join(" ");
+    const next = [nextRtDate, nextRtTime].join(" ");
     const time = moment(now, "YYYY-MM-DD HH:mm");
     const nextTime = moment(next, "YYYY-MM-DD HH:mm");
 
