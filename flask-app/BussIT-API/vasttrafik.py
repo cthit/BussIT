@@ -6,9 +6,9 @@ from operator import itemgetter
 from .api_keys import API
 
 
-def get_vasttrafik_json(id):
+def get_vasttrafik_data(id):
     authKey = get_access_token()
-    date = datetime.now().strftime('%Y-%m-%d')
+    date = datetime.now().strftime("%Y-%m-%d")
     time = datetime.now().strftime("%H:%M")
     host = 'https://api.vasttrafik.se'
     baseurl = '/bin/rest.exe/v2'
@@ -22,9 +22,16 @@ def get_vasttrafik_json(id):
         'format': 'json',
     }
     requestURL = f"{host}{baseurl}/departureBoard"
-    r = requests.get(requestURL, params=request, headers=headers)
-    r = r.json()
-    return modify_json(r)
+    response = requests.get(requestURL, params=request, headers=headers)
+
+    status = response.status_code
+    data = response.json()
+    error = {'error': 'Service is not available'}
+
+    response = modify_data(data['DepartureBoard'])\
+        if status == 200 and 'error' not in data['DepartureBoard']\
+        else error
+    return response
 
 
 def get_access_token():
@@ -46,10 +53,8 @@ def get_access_token():
     return access_token
 
 
-def modify_json(data):
+def modify_data(data):
     result = { 'Departure': [] }
-    data['Departure'] = data['DepartureBoard']['Departure']
-    del data['DepartureBoard']
     data['Departure'] = [ trim_departure_data(d) for d in data['Departure'] ]
     key_list = get_departure_keys(data['Departure'])
     departures = {}
@@ -67,7 +72,8 @@ def modify_json(data):
 
     result['Departure'] = sorted(
         result['Departure'], key=itemgetter('rtDate', 'rtTime'))
-    return json.dumps(result)
+
+    return result
 
 
 def get_departure_keys(departures):
