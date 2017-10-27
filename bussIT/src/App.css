@@ -7,11 +7,10 @@ div[data-reactroot] {
 
 .widget {
   padding: 20px;
-  width: 100vw;
-  height: 100vh; }
+  width: 100vw; }
 
 .vasttrafik {
-  background-color: rgba(75, 17, 144, 0.8);
+  background-color: #282828;
   color: #c8c8c8;
   font-size: 1.4rem; }
   .vasttrafik ul {
@@ -23,25 +22,35 @@ div[data-reactroot] {
       flex: 1; }
     .vasttrafik .vasttrafik-header .destination, .vasttrafik .widget-list-item .destination {
       flex: 4; }
+    .vasttrafik .vasttrafik-header .track, .vasttrafik .widget-list-item .track {
+      flex: 2;
+      display: flex;
+      justify-content: center; }
     .vasttrafik .vasttrafik-header .departs, .vasttrafik .widget-list-item .departs {
-      flex: 4; }
+      flex: 2; }
     .vasttrafik .vasttrafik-header .next-departure, .vasttrafik .widget-list-item .next-departure {
-      flex: 3; }
-    .vasttrafik .vasttrafik-header .line, .vasttrafik .vasttrafik-header .destination, .vasttrafik .vasttrafik-header .departs, .vasttrafik .vasttrafik-header .next-departure, .vasttrafik .widget-list-item .line, .vasttrafik .widget-list-item .destination, .vasttrafik .widget-list-item .departs, .vasttrafik .widget-list-item .next-departure {
+      flex: 2; }
+    .vasttrafik .vasttrafik-header .line, .vasttrafik .vasttrafik-header .destination, .vasttrafik .vasttrafik-header .track, .vasttrafik .vasttrafik-header .departs, .vasttrafik .vasttrafik-header .next-departure, .vasttrafik .widget-list-item .line, .vasttrafik .widget-list-item .destination, .vasttrafik .widget-list-item .track, .vasttrafik .widget-list-item .departs, .vasttrafik .widget-list-item .next-departure {
       display: flex;
       align-items: center; }
   .vasttrafik .vasttrafik-header {
-    border-bottom: 2px solid rgba(170, 92, 216, 0.5);
+    border-bottom: 2px solid #09cdda;
     padding-bottom: 0.3em;
     margin-bottom: 7px; }
     .vasttrafik .vasttrafik-header .bus-stop {
-      color: #aa5cd8;
+      color: #09cdda;
       text-shadow: 1px 1px 2px rgba(75, 17, 144, 0.9);
       margin-top: 7px;
       margin-bottom: 5px; }
   .vasttrafik .widget-list-item, .vasttrafik .vasttrafik-header > li {
     display: flex; }
   .vasttrafik .widget-list-item {
-    border-bottom: 1px solid rgba(170, 92, 216, 0.5); }
+    border-bottom: 1px solid rgba(9, 205, 218, 0.2); }
+    .vasttrafik .widget-list-item .accessibility-icon {
+      padding: 0.2em 0.3em;
+      background-color: #4169E1;
+      border-radius: 0.2em;
+      margin-right: 0.5em;
+      font-size: 1rem; }
 
 /*# sourceMappingURL=App.css.map */

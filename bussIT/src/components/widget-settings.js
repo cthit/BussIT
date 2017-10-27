@@ -14,7 +14,7 @@ export const API = 'http://localhost:5000';
 export const stops = [
   {
     name: 'Chalmers Tvärgata',
-    id: 9021014005280000
+    id: 9021014001970000
   },
   {
     name: 'Chalmershållplatsen',

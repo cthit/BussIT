@@ -4,7 +4,7 @@
 . ./venv/bin/activate
 
 # Flask entry point
-export FLASK_APP=BussIT-API.app
+export FLASK_APP=BussIT-API
 # Flask debug mode, live code reload and debugger activated
 export FLASK_DEBUG=1
 
