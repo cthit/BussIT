@@ -108,4 +108,4 @@ ENV/
 # End of https://www.gitignore.io/api/sass,python
 
 ./bussIT/package-lock.json
-docker-compose.yml
+./flask-app/debug.sh
