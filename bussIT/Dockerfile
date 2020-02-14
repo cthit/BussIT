@@ -1,5 +1,13 @@
-FROM node:boron
-COPY . /usr/local/bussIT
-WORKDIR /usr/local/bussIT
-RUN npm install --no-optional
-CMD ["npm", "start"]
+FROM node:latest as build
+
+COPY /package.json /
+
+RUN npm i --production
+RUN npm i -g react-scripts 
+
+COPY . .
+RUN npm run build
+
+FROM nginx:alpine
+COPY nginx.conf /etc/nginx/nginx.conf
+COPY --from=build ./build /usr/share/nginx/html

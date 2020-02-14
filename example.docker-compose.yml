@@ -15,5 +15,7 @@ services:
     build:
       context: ./bussIT/
       dockerfile: Dockerfile
+    volumes:
+      - ./bussIT/src:/usr/local/bussIT/src
     ports:
       - 3000:3000

@@ -2,7 +2,7 @@
 * # API #
 * The domain you're getting your data from.
 */
-export const API = 'http://localhost:8080';
+export const API = process.env.NODE_ENV == "development" ? "http://localhost:5000" : "https://bussit.chalmers.it"
 
 /*
 * # Västtrafik #

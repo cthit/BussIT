@@ -6,6 +6,7 @@
   "dependencies": {
     "font-awesome": "^4.7.0",
     "moment": "^2.18.1",
+    "postinstall": "^0.7.0",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "superagent": "^3.5.1"
