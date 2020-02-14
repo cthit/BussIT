@@ -1,5 +1,9 @@
 FROM python
-COPY . /usr/local/bussIT
-WORKDIR /usr/local/bussIT
-RUN ./init.sh
-CMD ["./debug.sh"]
+COPY . .
+
+RUN pip install -e .
+RUN pip install waitress
+
+WORKDIR ./BussIT-API/
+
+CMD ["waitress-serve", "--call", "main:create_app"]

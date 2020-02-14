@@ -1,0 +1,19 @@
+version: "2"
+services:
+  flask-app:
+    build:
+      context: ./flask-app/
+      dockerfile: Dockerfile
+    environment:
+      #Get the key and secret from https://developer.vasttrafik.se/
+      VASTTRAFIK_KEY:
+      VASTTRAFIK_SECRET: 
+    ports:
+      - 5000:5000
+
+  frontend:
+    build:
+      context: ./bussIT/
+      dockerfile: Dockerfile
+    ports:
+      - 3000:3000

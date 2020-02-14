@@ -3,7 +3,7 @@ import json
 import requests
 import base64
 from operator import itemgetter
-from .api_keys import API
+import config
 
 
 def get_vasttrafik_data(id):
@@ -35,19 +35,15 @@ def get_vasttrafik_data(id):
 
 
 def get_access_token():
-    url = 'https://api.vasttrafik.se/token' # Set destination URL here
-    key = API['vasttrafik']['key']
-    secret = API['vasttrafik']['secret']
+    url = 'https://api.vasttrafik.se/token?grant_type=client_credentials&scope=1' # Set destination URL here
+    key = config.VASTTRAFIK_KEY
+    secret = config.VASTTRAFIK_SECRET
     encoded = base64.b64encode((key + ":" + secret).encode()).decode()
-    post_fields = {
-        'grant_type': 'client_credentials',
-        'scope': '1'
-    }
     headers = {
         'Authorization': 'Basic ' + encoded,
         'Content-Type': 'application/x-www-form-urlencoded',
     }     # Set POST fields here
-    r = requests.post(url, data=post_fields, headers=headers).json()
+    r = requests.post(url, headers=headers).json()
     r = json.dumps(r)
     access_token = json.loads(r)['access_token']
     return access_token

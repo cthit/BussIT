@@ -2,7 +2,7 @@
 * # API #
 * The domain you're getting your data from.
 */
-export const API = 'http://localhost:5000';
+export const API = 'http://localhost:8080';
 
 /*
 * # Västtrafik #
