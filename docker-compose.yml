@@ -3,7 +3,7 @@ services:
   frontend:
     build:
       context: ./bussIT/
-      dockerfile: Dockerfile
+      dockerfile: dev.Dockerfile
     volumes:
       - ./bussIT/src:/usr/local/bussIT/src
     ports:
