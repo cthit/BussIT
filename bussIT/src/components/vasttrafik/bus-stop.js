@@ -19,7 +19,7 @@ class BusStop extends Component {
       if (res) {
         res = JSON.parse(res.text);
         this.setState({
-          result: res.Departure.sort((a,b) => a.sname.localeCompare(b.sname))
+          result: res.Departure.sort((a,b) => a.rtTime.localeCompare(b.rtTime))
         });
       }
     });

@@ -14,7 +14,7 @@ const Vasttrafik = () => {
   return (
     <div>
       <h1 className="clock">
-        {date.getHours() + ":" + date.getMinutes()}
+        {format(date)}
       </h1>
       <div className="widget vasttrafik">
         {addBusStops()}
@@ -22,5 +22,11 @@ const Vasttrafik = () => {
     </div>
   );
 }
+
+const prependZero = (val) => 
+  (val < 10 ? "0" : "" ) + val;
+
+const format = date => 
+  prependZero(date.getHours()) + ":" + prependZero(date.getMinutes());
 
 export default Vasttrafik;

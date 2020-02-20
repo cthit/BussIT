@@ -13,7 +13,7 @@ def create_app():
             else 200
 
         return jsonify(response), status,\
-            {'Access-Control-Allow-Origin': '*'}
+            {'Access-Control-Allow-Origin': 'http://localhost:3000'}
     
     return app
 

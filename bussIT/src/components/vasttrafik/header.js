@@ -11,20 +11,21 @@ class Header extends Component {
           {busStop}
         </h5>
         <li>
-          <div className="line">Linje</div>
-          <div className="destination">Riktning</div>
-          <div className="track">Läge</div>
-          <div className="departs">Avgår om</div>
-          <div className="next-departure">Nästa tur</div>
-          <div className="line">Linje</div>
-          <div className="destination">Riktning</div>
-          <div className="track">Läge</div>
-          <div className="departs">Avgår om</div>
-          <div className="next-departure">Nästa tur</div>
+          <Titles/>
+          <Titles/>
         </li>
       </div>
     );
   }
 }
+
+const Titles = () => 
+  <React.Fragment>
+    <div className="line">Linje</div>
+    <div className="destination">Riktning</div>
+    <div className="track">Läge</div>
+    <div className="departs">Avgår om</div>
+    <div className="next-departure">Nästa tur</div>
+  </React.Fragment>
 
 export default Header;
