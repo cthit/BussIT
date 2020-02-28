@@ -30,16 +30,13 @@ npm run sass
 ```
 
 ### Production
-To build the React application you run:
-```
-npm run build
-```
+Build the Dockerfile under `bussIT/` and run it. The frontend server will listen to port `8080`.
 
 ## Flask
 The backend runs on the Python framework [Flask](http://flask.pocoo.org) and is used as an [API](https://en.wikipedia.org/wiki/Application_programming_interface) to request data and structure it in a format more convenient for the frontend application.
 
 ### Development
-First you need to add a copy of `api_keys.example.py` and rename it to `api_keys.py`. The file can be found in `flask-app/InfoHubAPI/`. Add your API key in this file.
+First you need to add a copy of `example.debug.sh` and rename it to `debug.sh`. The file can be found in `flask-app/`. Set the environment variables `VASTTRAFIK_KEY` and `VASTTRAFIK_SECRET` to the key acquired  from [Vasttrafik](https://developer.vasttrafik.se)
 
 The first time you run the application (and every time you add new dependencies) you need do run:
 ```
@@ -51,7 +48,13 @@ sh ./debug.sh
 ```
 
 ### Production
-There are currently no specified script for production mode.
+Build the Dockerfile in `flask-app` and run the image. You need to set the environment variables `VASTTRAFIK_KEY` and `VASTTRAFIK_SECRET` to the key acquired  from [Vasttrafik](https://developer.vasttrafik.se). The server listens to port `8080`. <br>
+#### Bug
+The time settings of the docker image might be incorrect resulting in the wrong departure times. Fix this by calling 
+```
+dpkg-reconfigure tzdata
+```
+and set the correct timezone.
 
 ## Dependencies
 * [React](https://facebook.github.io/react/)

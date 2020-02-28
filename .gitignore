@@ -107,5 +107,4 @@ ENV/
 
 # End of https://www.gitignore.io/api/sass,python
 
-# API KEYS
-api_keys.py
+flask-app/debug.sh

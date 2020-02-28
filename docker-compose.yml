@@ -1,0 +1,10 @@
+version: "2"
+services:
+  frontend:
+    build:
+      context: ./bussIT/
+      dockerfile: dev.Dockerfile
+    volumes:
+      - ./bussIT/src:/usr/local/bussIT/src
+    ports:
+      - 3000:3000

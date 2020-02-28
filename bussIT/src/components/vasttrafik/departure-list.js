@@ -12,7 +12,7 @@ class DepartureList extends Component {
 
   render() {
     return (
-      <ul>
+      <ul className="departure-list">
         {this.addDepartureItem()}
       </ul>
     );

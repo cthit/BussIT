@@ -15,11 +15,11 @@ class BusStop extends Component {
 
   fetchData() {
     const { id } = this.props.data;
-    request.get(API + "/vasttrafik/" + id).accept("json").end((err, res) => {
+    request.get(API + "/api/vasttrafik/" + id).accept("json").end((err, res) => {
       if (res) {
         res = JSON.parse(res.text);
         this.setState({
-          result: res.Departure
+          result: res.Departure.sort((a,b) => a.rtTime.localeCompare(b.rtTime))
         });
       }
     });
