@@ -3,7 +3,6 @@ FROM node:latest as build
 COPY /package.json /
 
 RUN npm i --production
-RUN npm i react-scripts 
 
 COPY . .
 RUN npm run build
